@@ -12,7 +12,8 @@ export default function Gallery() {
     {
       original: i2,
       thumbnail: i2,
-      originalHeight: 420,
+      originalHeight: 435,
+      originalWidth: 435,
       description: "The Weeknd",
     },
 
@@ -31,7 +32,7 @@ export default function Gallery() {
     {
       original: i4,
       thumbnail: i4,
-      originalHeight: 420,
+      originalHeight: 430,
       description: "Tyler, The Creator",
     },
     {
