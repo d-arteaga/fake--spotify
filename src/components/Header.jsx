@@ -44,9 +44,16 @@ export default function Header() {
           >
             <Navbar.Text style={{ backgroundColor: "black" }}>
               Signed in as:{" "}
-              <a href="#login" style={{ backgroundColor: "black" }}>
+              <Link
+                to="/Profile"
+                style={{
+                  backgroundColor: "black",
+                  textDecoration: "none",
+                  color: "white",
+                }}
+              >
                 wumbo jumbo
-              </a>
+              </Link>
             </Navbar.Text>
             <img
               src={pfp}
