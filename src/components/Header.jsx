@@ -3,14 +3,10 @@ import pfp from "../assets/pfp.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-
 import { Link } from "react-router-dom";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Header() {
+export default function Header({ userName }) {
   return (
     <>
       <Navbar data-bs-theme="dark" style={{ backgroundColor: "black" }}>
@@ -52,17 +48,19 @@ export default function Header() {
                   color: "white",
                 }}
               >
-                wumbo jumbo
+                {userName}
               </Link>
             </Navbar.Text>
-            <img
-              src={pfp}
-              width="35"
-              height="35"
-              className="d-inline-block align-top"
-              alt="Profile picture"
-              style={{ marginLeft: "15px", backgroundColor: "black" }}
-            />
+            <Link to="/Profile" style={{ backgroundColor: "black" }}>
+              <img
+                src={pfp}
+                width="35"
+                height="35"
+                className="d-inline-block align-top"
+                alt="Profile picture"
+                style={{ marginLeft: "15px", backgroundColor: "black" }}
+              />
+            </Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>

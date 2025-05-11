@@ -26,6 +26,7 @@ export default function Rankings() {
         console.error("Error fetching data:", error);
       });
   }, []);
+
   return (
     <>
       <Stack gap={4}>
@@ -34,10 +35,9 @@ export default function Rankings() {
         </h1>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <DropdownButton
-            // as="button"
             style={{
               display: "flex",
-              justfiyContent: "center",
+              justifyContent: "center",
             }}
             key="down-centered"
             id="dropdown-button-drop-down-centered"
@@ -54,8 +54,9 @@ export default function Rankings() {
           Top Artists in the World
         </h2>
         <ListGroup as="ol" numbered data-bs-theme="dark">
-          {songs.map((artist) => (
+          {songs.map((artist, index) => (
             <ListGroup.Item
+              key={artist.ranking || index} // Use a unique key, such as `ranking`, or fallback to `index`
               as="li"
               className="d-flex justify-content-between align-items-start"
             >
@@ -72,9 +73,6 @@ export default function Rankings() {
                 </div>
                 Monthly Listeners: {artist.listeners.toLocaleString()}
               </div>
-              {/* <Badge bg="success" pill>
-                ^
-              </Badge> */}
             </ListGroup.Item>
           ))}
         </ListGroup>
